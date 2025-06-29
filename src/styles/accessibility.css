@@ -1,0 +1,76 @@
+/* Melhorias de acessibilidade */
+
+/* Foco visível para navegação por teclado */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #2196F3 !important;
+    outline-offset: 2px !important;
+}
+
+/* Melhor contraste para textos */
+.grey-text {
+    color: #616161 !important;
+}
+
+/* Melhor espaçamento para toque em dispositivos móveis */
+@media (max-width: 768px) {
+    .collection-item {
+        min-height: 60px;
+    }
+    
+    .btn, .btn-flat {
+        min-height: 44px;
+        line-height: 44px;
+        padding: 0 2rem;
+    }
+}
+
+/* Indicadores visuais para elementos interativos */
+.collection-item:hover {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.collection-item.active {
+    border-left: 4px solid currentColor;
+}
+
+/* Melhor feedback visual para botões */
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Transições suaves */
+.btn,
+.collection-item,
+.card {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Melhor contraste para status */
+.status-indicator {
+    font-weight: 600;
+}
+
+/* Skip link para navegação por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}

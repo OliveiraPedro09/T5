@@ -1,0 +1,263 @@
+/* Navbar simples e funcional */
+
+/* Reset específico para evitar conflitos com Materialize */
+.enhanced-navbar button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+}
+
+.enhanced-navbar {
+    background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 50%, #ab47bc 100%);
+    box-shadow: 0 4px 20px rgba(123, 31, 162, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.enhanced-navbar .nav-wrapper {
+    padding: 0 1rem;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    min-height: 64px;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    height: 100%;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    height: 44px;
+    line-height: 1.2;
+}
+
+.navbar-brand:hover {
+    color: #f3e5f5;
+}
+
+.navbar-brand i {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Reset para ul e li */
+.enhanced-navbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1px;
+    height: 100%;
+}
+
+.enhanced-navbar .navbar-nav li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: none !important;
+    height: 100%;
+}
+
+.enhanced-navbar .navbar-nav li button {
+    line-height: 1.2 !important;
+    height: 44px !important;
+    padding: 8px 16px !important;
+    min-height: unset !important;
+}
+
+.enhanced-navbar .navbar-nav li button span {
+    font-size: 14px !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    display: inline !important;
+}
+
+/* Botões da navbar - versão compacta */
+.navbar-nav-button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 6px 12px;
+    margin: 0;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+    white-space: nowrap;
+    height: 36px;
+    min-height: unset;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.navbar-nav-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-nav-button:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav-button.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+.navbar-nav-button i {
+    font-size: 14px;
+    color: inherit;
+    line-height: 1;
+}
+
+.navbar-nav-button span {
+    color: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu mobile */
+.enhanced-sidenav {
+    background: linear-gradient(180deg, #7b1fa2 0%, #9c27b0 100%);
+    width: 280px;
+}
+
+.enhanced-sidenav .user-view {
+    height: 160px;
+}
+
+.enhanced-sidenav .user-view .background {
+    background: linear-gradient(135deg, rgba(171, 71, 188, 0.8), rgba(123, 31, 162, 0.9));
+}
+
+.enhanced-sidenav li > a,
+.enhanced-sidenav li > button {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 16px 32px;
+    transition: all 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    margin: 4px 0;
+    margin-right: 16px;
+}
+
+.enhanced-sidenav li > a:hover,
+.enhanced-sidenav li > button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão menu mobile */
+.mobile-menu-trigger {
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-trigger:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 992px) {
+    .enhanced-navbar .nav-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .enhanced-navbar .nav-wrapper {
+        padding: 0 0.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .enhanced-sidenav {
+        width: 260px;
+    }
+}
+
+/* Responsividade para navbar com muitos botões */
+@media only screen and (max-width: 1200px) {
+    .navbar-nav-button {
+        padding: 4px 8px;
+        font-size: 11px;
+        gap: 3px;
+        height: 32px;
+    }
+    
+    .navbar-nav-button i {
+        font-size: 12px;
+    }
+    
+    .navbar-nav-button span {
+        font-size: 11px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-brand i {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .navbar-nav-button span {
+        display: none;
+    }
+    
+    .navbar-nav-button {
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+    }
+    
+    .navbar-nav-button i {
+        font-size: 16px;
+    }
+}

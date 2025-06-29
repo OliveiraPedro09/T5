@@ -1,0 +1,584 @@
+/* Melhorias estéticas para a navbar */
+
+/* Estilo principal da navbar */
+.enhanced-navbar {
+    background: linear-gradient(135deg, #7b1fa2 0%, #9c27b0 50%, #ab47bc 100%) !important;
+    box-shadow: 0 4px 20px rgba(123, 31, 162, 0.3) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: sticky !important;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scroll effect */
+.enhanced-navbar.scrolled {
+    box-shadow: 0 8px 32px rgba(123, 31, 162, 0.4) !important;
+    backdrop-filter: blur(15px);
+}
+
+/* Wrapper da navbar */
+.enhanced-navbar .nav-wrapper {
+    padding: 0 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Logo/Brand da navbar */
+.navbar-brand {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-right: 2rem;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-brand::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff, #e1bee7);
+    transition: width 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+    width: 100%;
+}
+
+.navbar-brand:hover {
+    color: #f3e5f5 !important;
+    transform: scale(1.02);
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #ffffff, #e1bee7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Estilo dos botões da navbar */
+.navbar-nav-button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    margin: 0 0.2rem;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    height: auto;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar-nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.navbar-nav-button:hover::before {
+    left: 100%;
+}
+
+.navbar-nav-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+}
+
+.navbar-nav-button:hover::after {
+    width: 80%;
+}
+
+.navbar-nav-button:active {
+    transform: translateY(0);
+}
+
+.navbar-nav-button i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav-button:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Botão ativo */
+.navbar-nav-button.active {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.navbar-nav-button.active::after {
+    width: 80%;
+    background: #ffffff;
+}
+
+.navbar-nav-button.active i {
+    transform: scale(1.1);
+}
+
+/* Menu do usuário */
+.user-menu-trigger {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 25px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-menu-trigger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.user-menu-trigger:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.user-menu-trigger:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-menu-trigger .material-icons {
+    font-size: 1.5rem !important;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.user-menu-trigger:hover .material-icons {
+    transform: rotate(360deg);
+}
+
+/* Menu lateral mobile */
+.enhanced-sidenav {
+    background: linear-gradient(180deg, #7b1fa2 0%, #9c27b0 100%) !important;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    width: 280px !important;
+}
+
+.enhanced-sidenav .user-view {
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+}
+
+.enhanced-sidenav .user-view .background {
+    background: linear-gradient(135deg, rgba(171, 71, 188, 0.8), rgba(123, 31, 162, 0.9)) !important;
+    position: relative;
+}
+
+.enhanced-sidenav .user-view::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.enhanced-sidenav .user-view > a {
+    position: relative;
+    z-index: 2;
+}
+
+.enhanced-sidenav li > a,
+.enhanced-sidenav li > button {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    padding: 1rem 2rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 0 25px 25px 0 !important;
+    margin: 0.2rem 0 !important;
+    margin-right: 1rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.enhanced-sidenav li > a::before,
+.enhanced-sidenav li > button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+}
+
+.enhanced-sidenav li > a:hover::before,
+.enhanced-sidenav li > button:hover::before {
+    width: 100%;
+}
+
+.enhanced-sidenav li > a:hover,
+.enhanced-sidenav li > button:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown do usuário */
+.enhanced-dropdown {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    margin-top: 10px !important;
+    transform-origin: top right;
+    animation: dropdown-appear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes dropdown-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.enhanced-dropdown li > a {
+    padding: 1rem 1.5rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    color: #424242 !important;
+    font-weight: 500 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.enhanced-dropdown li > a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(90deg, rgba(123, 31, 162, 0.1), rgba(156, 39, 176, 0.1));
+    transition: width 0.3s ease;
+}
+
+.enhanced-dropdown li > a:hover::before {
+    width: 100%;
+}
+
+.enhanced-dropdown li > a:hover {
+    background: transparent !important;
+    color: #7b1fa2 !important;
+    transform: translateX(8px);
+}
+
+.enhanced-dropdown li > a i {
+    color: #7b1fa2 !important;
+    transition: transform 0.3s ease;
+}
+
+.enhanced-dropdown li > a:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Botão do menu mobile */
+.mobile-menu-trigger {
+    color: #ffffff !important;
+    padding: 0.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-menu-trigger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.mobile-menu-trigger:hover::before {
+    width: 60px;
+    height: 60px;
+}
+
+.mobile-menu-trigger:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1.1);
+}
+
+.mobile-menu-trigger i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-trigger:hover i {
+    transform: rotate(180deg);
+}
+
+/* Debug styles para verificar visibilidade */
+.enhanced-navbar ul.left {
+    display: flex !important;
+    align-items: center !important;
+    height: 64px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.enhanced-navbar ul.left li {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Garantir que os botões sejam visíveis */
+.navbar-nav-button span {
+    display: inline-block !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+}
+
+.navbar-nav-button i {
+    color: inherit !important;
+    font-size: 1.1rem !important;
+    transition: transform 0.3s ease !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Estilo específico para sobrescrever Materialize */
+nav .navbar-nav-button {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+    font-family: inherit !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.75rem 1.25rem !important;
+    margin: 0 0.2rem !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: auto !important;
+    line-height: normal !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    min-height: 44px !important;
+    justify-content: flex-start !important;
+}
+
+nav .navbar-nav-button:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+nav .navbar-nav-button:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+nav .navbar-nav-button.active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Força visibilidade para debug - remover após teste */
+.navbar-nav-button {
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+/* Força cor do texto para debug */
+.navbar-nav-button, 
+.navbar-nav-button * {
+    color: #ffffff !important;
+}
+
+/* Debug border para ver onde estão os botões */
+.enhanced-navbar ul.left {
+    border: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+
+.navbar-nav-button {
+    border: 1px solid rgba(0, 255, 0, 0.3) !important;
+}
+
+/* Reset completo do Materialize para os botões */
+nav ul li .navbar-nav-button {
+    height: auto !important;
+    line-height: normal !important;
+    padding: 0.75rem 1.25rem !important;
+    margin: 0 !important;
+    text-transform: none !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid rgba(0, 255, 0, 0.3) !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    min-width: auto !important;
+    max-width: none !important;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 992px) {
+    .enhanced-navbar .nav-wrapper {
+        padding: 0 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem !important;
+        margin-right: 1rem;
+    }
+    
+    .navbar-nav-button {
+        padding: 0.6rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .enhanced-navbar .nav-wrapper {
+        padding: 0 0.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem !important;
+        margin-right: 0.5rem;
+    }
+    
+    .enhanced-sidenav {
+        width: 260px !important;
+    }
+}
+
+/* Loading state para botões */
+.navbar-nav-button.loading {
+    pointer-events: none;
+    position: relative;
+}
+
+.navbar-nav-button.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
