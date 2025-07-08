@@ -1,5 +1,16 @@
 # 🎯 RESUMO COMPLETO DA IMPLEMENTAÇÃO
 
+## 🚀 Tecnologias Utilizadas
+
+- **React 18** - Biblioteca JavaScript para construção de interfaces
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **MaterializeCSS** - Framework CSS para design responsivo e moderno
+- **React Scripts** - Ferramenta de build e desenvolvimento
+
+### Pré-requisitos
+- Node.js (versão 16)
+- npm ou yarn
+
 ## 📋 O que foi implementado
 
 ### ✅ Backend Completo (Node.js + Express + SQLite)
