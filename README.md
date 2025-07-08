@@ -83,8 +83,11 @@ npm run install-backend
 # Popular dados iniciais
 cd backend && npm run seed
 
-# Executar sistema completo
+# Executar sistema 
 npm run dev
+
+# Em outro Terminal
+npm start
 ```
 
 ### 2. Acesso às funcionalidades
